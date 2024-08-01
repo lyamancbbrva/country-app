@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import RandomCard from "./RandomCard";
-import Card from "./Card";
 import Cards from "./Cards";
 import { cntx } from "../../data/DataContext";
 
