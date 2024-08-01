@@ -2,32 +2,39 @@ import { useEffect, useState } from "react";
 import Footer from "./component/footer/Footer";
 import Header from "./component/header/Header";
 import Main from "./component/main/Main";
-import axios from "axios";
+
 import { Routes, Route, useParams } from "react-router-dom";
 import Error404 from "./component/error/Error404";
-import Card from "./component/main/Card";
 import Cards from "./component/main/Cards";
+import DataContext from "./data/DataContext";
+import CardInfo from "./component/main/CardInfo";
 
 function App() {
     const [status, setStatus] = useState(false);
-    const [data, setData] = useState([]);
-    const [searchSt, setSearchSt] = useState(false)
-
-    useEffect(() => {
-        axios
-            .get("https://restcountries.com/v3.1/all")
-            .then((res) => setData(res.data));
-    }, []);
-
+    const [searchSt, setSearchSt] = useState(false);
+    const [search, setSearch] = useState('');
     return (
         <>
-            <Header status={status} setStatus={setStatus} data={data} />
-            <Routes>
-                <Route path='/' element={<Main data={data} searchSt={searchSt} setSearchSt={setSearchSt} />} />
-                <Route path='/:cat' element={<Cards data={data} />} />
-                <Route path='*' element={<Error404 />} />
-            </Routes>
-            <Footer />
+            <DataContext>
+                <Header status={status} setStatus={setStatus} />
+                <Routes>
+                    <Route
+                        path='/'
+                        element={
+                            <Main
+                                searchSt={searchSt}
+                                setSearchSt={setSearchSt}
+                                search={search}
+                                setSearch={setSearch}
+                            />
+                        }
+                    />
+                    <Route path='/:region' element={<Cards />} />
+                    <Route path='/:region/:cca3' element={<CardInfo />} />
+                    <Route path='*' element={<Error404 />} />
+                </Routes>
+                <Footer />
+            </DataContext>
         </>
     );
 }

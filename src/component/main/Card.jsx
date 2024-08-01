@@ -1,12 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-function Card({ name, capital, continents, flags, area, population }) {
+function Card({ name, capital, continents, flags, area, cca3, population }) {
     return (
-        <div className='max-w-xs p-6 rounded-md shadow-md dark:bg-gray-50 dark:text-gray-900 mx-auto md:m-[10px] md:w-[calc(50%-10px)] lg:m-[15px] lg:w-[calc(30%-15px)]'>
+        <Link
+            to={`/region/${cca3}`}
+            className='w-[95vw] block p-6 rounded-md shadow-md dark:bg-gray-50 dark:text-gray-900 mx-auto md:m-[10px] md:w-[calc(50%-10px)] lg:m-[15px] lg:w-[calc(30%-15px)]'
+        >
             <img
                 src={flags.png}
-                alt={name.common}
-                className='object-cover object-center w-full rounded-md h-72 dark:bg-gray-500'
+                alt={`flag of ${name.common}`}
+                className='object-cover  w-full rounded-md h-72 dark:bg-gray-500'
             />
             <div className='mt-6 mb-2 pr-[30px]'>
                 <h5 className='font-bold hover:underline pt-[10px] capitalize text-[1.4em]'>
@@ -25,7 +29,7 @@ function Card({ name, capital, continents, flags, area, population }) {
                     Population: {population}
                 </p>
             </div>
-        </div>
+        </Link>
     );
 }
 

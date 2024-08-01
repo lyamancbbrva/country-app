@@ -1,37 +1,64 @@
 import React from "react";
 import { FaXmark } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 function Sidebar({ status, setStatus }) {
     return (
         <aside
-            className={`w-full p-6 sm:w-60 ${
+            className={`w-full p-6 ${
                 status ? "flex" : "hidden"
             } dark:bg-gray-50 dark:text-gray-800 h-screen fixed top-0`}
         >
             <FaXmark
-            onClick={()=> setStatus(false)}
-            className='absolute top-[20px] right-[40px] text-[1.8em]' />
+                onClick={() => setStatus(false)}
+                className='absolute top-[20px] right-[40px] text-[1.8em]'
+            />
             <nav className='space-y-8 text-[1.6em]'>
                 <div className='space-y-2'>
                     <div className='flex flex-col space-y-1'>
-                        <a rel='noopener noreferrer' href='#'>
+                        <Link
+                            rel='noopener noreferrer'
+                            to='/africa'
+                            onClick={() => setStatus(false)}
+                        >
                             Africa
-                        </a>
-                        <a rel='noopener noreferrer' href='#'>
+                        </Link>
+
+                        <Link
+                            rel='noopener noreferrer'
+                            to='/europe'
+                            onClick={() => setStatus(false)}
+                        >
                             Europe
-                        </a>
-                        <a rel='noopener noreferrer' href='#'>
+                        </Link>
+                        <Link
+                            rel='noopener noreferrer'
+                            to='/oceania'
+                            onClick={() => setStatus(false)}
+                        >
                             Oceania
-                        </a>
-                        <a rel='noopener noreferrer' href='#'>
+                        </Link>
+                        <Link
+                            rel='noopener noreferrer'
+                            to='/asia'
+                            onClick={() => setStatus(false)}
+                        >
                             Asia
-                        </a>
-                        <a rel='noopener noreferrer' href='#'>
+                        </Link>
+                        <Link
+                            rel='noopener noreferrer'
+                            to='/americas'
+                            onClick={() => setStatus(false)}
+                        >
                             Americas
-                        </a>
-                        <a rel='noopener noreferrer' href='#'>
+                        </Link>
+                        <Link
+                            rel='noopener noreferrer'
+                            href='/antarctic'
+                            onClick={() => setStatus(false)}
+                        >
                             Antarctic
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </nav>

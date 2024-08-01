@@ -2,7 +2,7 @@ import React from "react";
 import Sidebar from "./Sidebar";
 import { Link } from "react-router-dom";
 
-function Header({ status, setStatus }) {
+function Header({ status, setStatus, data }) {
     return (
         <header className='p-4 dark:bg-gray-100 dark:text-gray-800'>
             <div className='container flex justify-between h-16 mx-auto md:justify-center md:space-x-6'>
@@ -46,11 +46,11 @@ function Header({ status, setStatus }) {
                         version='1.1'
                         id='Capa_1'
                         xmlns='http://www.w3.org/2000/svg'
-                        xmlns:xlink='http://www.w3.org/1999/xlink'
+                        xmlnsXlink='http://www.w3.org/1999/xlink'
                         width='50px'
                         height='50px'
                         viewBox='0 0 31.416 31.416'
-                        xml:space='preserve'
+                        xmlSpace='preserve'
                     >
                         <g>
                             <g>
