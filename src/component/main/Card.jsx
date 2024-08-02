@@ -5,7 +5,7 @@ function Card({ name, capital, continents, flags, area, cca3, population }) {
     return (
         <Link
             to={`/region/${cca3}`}
-            className='w-[95vw] block p-6 my-[15px] rounded-md shadow-md dark:bg-[#ccc] dark:text-black mx-auto md:m-[10px] md:w-[calc(50%-10px)] lg:m-[15px] lg:w-[calc(25%-30px)]'
+            className='w-[90vw] block p-6 my-[15px] rounded-md shadow-md dark:bg-[#ccc] dark:text-black mx-auto md:m-[10px] md:w-[calc(50%-10px)] lg:m-[15px] lg:w-[calc(25%-30px)]'
         >
             <img
                 src={flags.png}

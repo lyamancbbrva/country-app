@@ -3,7 +3,7 @@ import Footer from "./component/footer/Footer";
 import Header from "./component/header/Header";
 import Main from "./component/main/Main";
 
-import { Routes, Route, useParams } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Error404 from "./component/error/Error404";
 import Cards from "./component/main/Cards";
 import DataContext from "./data/DataContext";
@@ -14,6 +14,11 @@ function App() {
     const [searchSt, setSearchSt] = useState(false);
     const [search, setSearch] = useState("");
     const [theme, setTheme] = useState(false);
+
+    const {pathName} = useLocation()
+    useEffect(()=>{
+        window.scroll(0, 0)
+    },[pathName])
     return (
         <>
             <DataContext>

@@ -6,7 +6,7 @@ function Sidebar({ status, setStatus }) {
     return (
         <aside
             className={`w-full p-6 ${
-                status ? ("flex  overflow-hidden") : "hidden"
+                status ? "flex" : "hidden"
             } bg-white w-[100vw] h-screen fixed top-0`}
         >
             <FaXmark
