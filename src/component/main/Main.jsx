@@ -9,8 +9,7 @@ function Main({ searchSt, setSearchSt, search, setSearch }) {
     return (
         <>
             <main className='min-h-[70vh] wrapper mx-auto lg:min-h-[80vh]'>
-                <div className='main-header pt-[20px]'></div>
-                <h1 className='text-[2.2rem] font-bold text-center pt-[20px]'>
+                <h1 className='text-[2.2rem] font-bold text-center pt-[30px]'>
                     Ölkələrə xoş gəlmisoz!
                 </h1>
                 <h1 className='text-[2.2rem] font-bold text-center text-[#5A5DDC]'>
