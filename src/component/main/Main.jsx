@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import RandomCard from "./RandomCard";
 import Cards from "./Cards";
 import { cntx } from "../../data/DataContext";
+import Card from "./Card";
 
 function Main({ searchSt, setSearchSt, search, setSearch }) {
     const data = useContext(cntx);
@@ -126,7 +127,7 @@ function Main({ searchSt, setSearchSt, search, setSearch }) {
                     </div>
                 </div>
                 <RandomCard data={data} />
-                <Cards data={data} search={search} setSearch={search} />
+                <Cards search={search} />
             </main>
         </>
     );

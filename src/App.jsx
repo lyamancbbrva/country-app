@@ -12,11 +12,17 @@ import CardInfo from "./component/main/CardInfo";
 function App() {
     const [status, setStatus] = useState(false);
     const [searchSt, setSearchSt] = useState(false);
-    const [search, setSearch] = useState('');
+    const [search, setSearch] = useState("");
+    const [theme, setTheme] = useState(false);
     return (
         <>
             <DataContext>
-                <Header status={status} setStatus={setStatus} />
+                <Header
+                    status={status}
+                    setStatus={setStatus}
+                    theme={theme}
+                    setTheme={setTheme}
+                />
                 <Routes>
                     <Route
                         path='/'
@@ -29,9 +35,12 @@ function App() {
                             />
                         }
                     />
-                    <Route path='/:region' element={<Cards />} />
+                    <Route
+                        path='/:region'
+                        element={<Cards />}
+                    />
                     <Route path='/:region/:cca3' element={<CardInfo />} />
-                    <Route path='*' element={<Error404 />} />
+                    <Route path='/*' element={<Error404 />} />
                 </Routes>
                 <Footer />
             </DataContext>

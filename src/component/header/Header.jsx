@@ -1,10 +1,23 @@
 import React from "react";
 import Sidebar from "./Sidebar";
 import { Link } from "react-router-dom";
+import { BsMoonStarsFill } from "react-icons/bs";
+import { RiSunFill } from "react-icons/ri";
+function Header({ status, setStatus, theme, setTheme }) {
+    function handleTheme() {
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark')
+          } else {
+            document.documentElement.classList.remove('dark')
+          }
+          localStorage.theme = 'light'
+          localStorage.theme = 'dark'
+          localStorage.removeItem('theme')
+        
+    }
 
-function Header({ status, setStatus, data }) {
     return (
-        <header className='p-4 dark:bg-gray-100 dark:text-gray-800'>
+        <header className='p-4 dark:bg-[#160733] dark:text-[#fff]'>
             <div className='container flex justify-between h-16 mx-auto md:justify-center md:space-x-6'>
                 <ul className='items-stretch hidden space-x-3 md:flex'>
                     <li className='flex'>
@@ -42,7 +55,8 @@ function Header({ status, setStatus, data }) {
                     className='flex items-center p-2 focus:text-violet-600 focus:border-violet-600'
                 >
                     <svg
-                        fill='#000000'
+                        // fill='#000000'
+                        className='text-[#000]'
                         version='1.1'
                         id='Capa_1'
                         xmlns='http://www.w3.org/2000/svg'
@@ -108,6 +122,25 @@ function Header({ status, setStatus, data }) {
                         </Link>
                     </li>
                 </ul>
+                <div className='flex items-center text-end'>
+                    {theme ? (
+                        <RiSunFill
+                            className='text-[1.8em]'
+                            onClick={() => {
+                                setTheme(false);
+                                handleTheme();
+                            }}
+                        />
+                    ) : (
+                        <BsMoonStarsFill
+                            className='text-[1.7em]'
+                            onClick={() => {
+                                setTheme(true);
+                                handleTheme();
+                            }}
+                        />
+                    )}
+                </div>
                 <button
                     title='Button'
                     type='button'
@@ -121,7 +154,7 @@ function Header({ status, setStatus, data }) {
                         fill='none'
                         viewBox='0 0 24 24'
                         stroke='currentColor'
-                        className='w-6 h-6 dark:text-gray-800'
+                        className='w-6 h-6'
                     >
                         <path
                             strokeLinecap='round'

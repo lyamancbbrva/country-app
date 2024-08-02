@@ -16,9 +16,9 @@ function CardInfo() {
                             key={i}
                             className='w-[85vw] mx-auto my-[30px] wrapper lg:flex items-center justify-center h-[80vh]'
                         >
-                            <div className='img w-[100%] object-cover'>
+                            <div className='img w-[60%]'>
                                 <img
-                                    className='lg:w-[70%]'
+                                    className='lg:w-[70%] object-cover'
                                     src={item.flags.png}
                                     alt={`flag of ${item.name.common}`}
                                 />
