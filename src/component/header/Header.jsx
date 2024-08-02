@@ -5,15 +5,8 @@ import { BsMoonStarsFill } from "react-icons/bs";
 import { RiSunFill } from "react-icons/ri";
 function Header({ status, setStatus, theme, setTheme }) {
     function handleTheme() {
-        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark')
-          } else {
-            document.documentElement.classList.remove('dark')
-          }
-          localStorage.theme = 'light'
-          localStorage.theme = 'dark'
-          localStorage.removeItem('theme')
-        
+        document.documentElement.classList.toggle("dark");
+        setTheme(!theme);
     }
 
     return (
