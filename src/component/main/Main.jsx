@@ -7,6 +7,11 @@ function Main() {
     const data = useContext(cntx);
     const [search, setSearch] = useState("");
     const [searchSt, setSearchSt] = useState(false);
+    const [count, setCount] = useState(20);
+    const [x, setX] = useState(0);
+    console.log("x", x);
+    console.log("count", count);
+
     return (
         <>
             <main className='min-h-[70vh] wrapper mx-auto lg:min-h-[80vh]'>
@@ -136,7 +141,7 @@ function Main() {
                                     .toLocaleLowerCase()
                                     .startsWith(search?.toLocaleLowerCase());
                             })
-                            .slice(0, 20)
+                            .slice(x, count)
                             .map((item, i) => {
                                 return <Card {...item} key={i} />;
                             })
@@ -149,8 +154,14 @@ function Main() {
                     className='flex justify-center rounded-md shadow-sm pb-[20px] '
                 >
                     <button
+                        onClick={() => {
+                            if (count <= data.length) {
+                                setX(0);
+                                setCount(20);
+                            }
+                        }}
                         type='button'
-                        className='inline-flex items-center px-2 py-2 text-sm font-semibold border rounded-l-md dark:border-gray-300'
+                        className='inline-flex items-center px-2 py-2 text-sm font-semibold border rounded-l-md focus:bg-violet-600 focus:text-white'
                     >
                         <span className='sr-only'>Previous</span>
                         <svg
@@ -168,61 +179,121 @@ function Main() {
                         </svg>
                     </button>
                     <button
+                        onClick={() => {
+                            if (count < data.length) {
+                                setCount(40);
+                                setX(20);
+                            }
+                        }}
                         type='button'
                         aria-current='page'
-                        className='inline-flex items-center px-4 py-2 text-sm font-semibold border dark:bg-violet-600 dark:text-gray-50 dark:border-gray-300'
+                        className='focus:bg-violet-600 focus:text-white inline-flex items-center px-4 py-2 text-sm font-semibold border dark:bg-violet-600 dark:text-gray-50 dark:border-gray-300'
                     >
                         1
                     </button>
                     <button
+                        onClick={() => {
+                            if (count < data.length) {
+                                setCount(60);
+                                setX(40);
+                            }
+                        }}
                         type='button'
-                        className='inline-flex items-center px-4 py-2 text-sm font-semibold border dark:border-gray-300'
+                        className='focus:bg-violet-600 focus:text-white inline-flex items-center px-4 py-2 text-sm font-semibold border dark:border-gray-300'
                     >
                         2
                     </button>
                     <button
+                        onClick={() => {
+                            if (count < data.length) {
+                                setCount(80);
+                                setX(60);
+                            }
+                        }}
                         type='button'
-                        className='inline-flex items-center px-4 py-2 text-sm font-semibold border dark:border-gray-300'
+                        className='focus:bg-violet-600 focus:text-white inline-flex items-center px-4 py-2 text-sm font-semibold border dark:border-gray-300'
                     >
                         3
                     </button>
                     <button
+                        onClick={() => {
+                            if (count < data.length) {
+                                setCount(100);
+                                setX(80);
+                            }
+                        }}
                         type='button'
-                        className='inline-flex items-center px-4 py-2 text-sm font-semibold border dark:border-gray-300'
+                        className='focus:bg-violet-600 focus:text-white inline-flex items-center px-4 py-2 text-sm font-semibold border dark:border-gray-300'
                     >
                         4
                     </button>
                     <button
+                        onClick={() => {
+                            if (count < data.length) {
+                                setCount(120);
+                                setX(100);
+                            }
+                        }}
                         type='button'
-                        className='inline-flex items-center px-4 py-2 text-sm font-semibold border dark:border-gray-300'
+                        className='focus:bg-violet-600 focus:text-white inline-flex items-center px-4 py-2 text-sm font-semibold border dark:border-gray-300'
                     >
                         5
                     </button>
                     <button
+                        onClick={() => {
+                            if (count < data.length) {
+                                setCount(140);
+                                setX(120);
+                            }
+                        }}
                         type='button'
-                        className='inline-flex items-center px-4 py-2 text-sm font-semibold border dark:border-gray-300'
+                        className='focus:bg-violet-600 focus:text-white inline-flex items-center px-4 py-2 text-sm font-semibold border dark:border-gray-300'
                     >
                         6
                     </button>
                     <button
+                        onClick={() => {
+                            if (count < data.length) {
+                                setCount(160);
+                                setX(140);
+                            }
+                        }}
                         type='button'
-                        className='inline-flex items-center px-4 py-2 text-sm font-semibold border dark:border-gray-300'
+                        className='focus:bg-violet-600 focus:text-white inline-flex items-center px-4 py-2 text-sm font-semibold border dark:border-gray-300'
                     >
                         7
                     </button>
                     <button
+                        onClick={() => {
+                            if (count < data.length) {
+                                setCount(180);
+                                setX(160);
+                            }
+                        }}
                         type='button'
-                        className='inline-flex items-center px-4 py-2 text-sm font-semibold border dark:border-gray-300'
+                        className='focus:bg-violet-600 focus:text-white inline-flex items-center px-4 py-2 text-sm font-semibold border dark:border-gray-300'
                     >
                         8
                     </button>
                     <button
+                        onClick={() => {
+                            if (count < data.length) {
+                                setCount(count + 20);
+                                setX(count - 20);
+                            }
+                        }}
                         type='button'
-                        className='inline-flex items-center px-4 py-2 text-sm font-semibold border dark:border-gray-300'
+                        className='focus:bg-violet-600 focus:text-white inline-flex items-center px-4 py-2 text-sm font-semibold border dark:border-gray-300'
                     >
                         9
                     </button>
                     <button
+                        onClick={() => {
+                            if (count < data.length) {
+                                setCount(count + 20);
+                                setX(count - 20);
+                            }
+                        }}
                         type='button'
                         className='inline-flex items-center px-2 py-2 text-sm font-semibold border rounded-r-md dark:border-gray-300'
                     >
