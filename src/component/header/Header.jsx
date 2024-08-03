@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Sidebar from "./Sidebar";
 import { Link } from "react-router-dom";
 import { BsMoonStarsFill } from "react-icons/bs";
 import { RiSunFill } from "react-icons/ri";
-function Header({ status, setStatus, theme, setTheme }) {
+function Header({ theme, setTheme }) {
+    const [status, setStatus] = useState(false);
+
     function handleTheme() {
         document.documentElement.classList.toggle("dark");
         setTheme(!theme);

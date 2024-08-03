@@ -3,6 +3,7 @@ import { FaXmark } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
 function Sidebar({ status, setStatus }) {
+   status ? document.documentElement.classList.add("overflow") :document.documentElement.classList.remove("overflow")
     return (
         <aside
             className={`w-full p-6 ${

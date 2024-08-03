@@ -6,6 +6,9 @@
     background-color: #160733;
     color: #fff;
 }
+.overflow{
+    overflow: hidden;
+}
 
 @media only screen and (min-width: 768px) {
     .wrapper {
