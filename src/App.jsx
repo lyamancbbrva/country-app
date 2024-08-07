@@ -20,7 +20,7 @@ function App() {
             <Routes>
                 <Route path='/' element={<Layout />}>
                     <Route path='/' element={<Main />} />
-                    <Route path="/likes" element={<Liked/>}/>
+                    <Route path="/liked" element={<Liked/>}/>
                     <Route path='/:region' element={<Regions />} />
                     <Route path='/:region/:cca3' element={<CardInfo />} />
                     <Route path='*' element={<Error404 />} />

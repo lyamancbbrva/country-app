@@ -3,24 +3,35 @@ import { cntx } from "../../context/DataContext";
 import { Link } from "react-router-dom";
 
 function Liked() {
-
     const { likedCountry, setlikedCountry } = useContext(cntx);
-    
+
+    console.log(setlikedCountry);
+
     return (
         <>
             <h1 className='text-[40px] text-center my-[60px]'>
-                Sevimli olkelerim
+                Bəyəndiklərindi
             </h1>
             <section className='md:flex justify-center items-center wrapper flex-wrap py-[30px] my-[30px]'>
                 {likedCountry.map((item) => {
-                    const { id, name, capital, region, area, population, img } = item;
+                    const {
+                        cca3,
+                        name,
+                        capital,
+                        region,
+                        area,
+                        population,
+                        flags,
+                    } = item;
+                    console.log(item);
                     return (
                         <Link
-                            to={`/region/${id}`}
+                            key={name}
+                            to={`/region/${cca3}`}
                             className='w-[90vw] block min-h-[70vh] my-[15px] rounded-md shadow-md dark:bg-[#271b42]  mx-auto md:m-[10px] md:w-[calc(50%-10px)] lg:m-[15px] lg:w-[calc(25%-30px)]'
                         >
                             <img
-                                src={img}
+                                src={flags}
                                 alt={`flag of ${name}`}
                                 className='object-contain  w-full rounded-md dark:bg-gray-500'
                             />
