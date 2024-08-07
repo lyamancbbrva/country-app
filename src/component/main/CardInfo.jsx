@@ -1,6 +1,6 @@
 import React from "react";
 import { useContext } from "react";
-import { cntx } from "../../data/DataContext";
+import { cntx } from "../../context/DataContext";
 import { useParams } from "react-router-dom";
 
 function CardInfo() {

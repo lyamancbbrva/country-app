@@ -3,8 +3,9 @@ import Sidebar from "./Sidebar";
 import { Link } from "react-router-dom";
 import { BsMoonStarsFill } from "react-icons/bs";
 import { RiSunFill } from "react-icons/ri";
-function Header({ theme, setTheme }) {
+function Header() {
     const [status, setStatus] = useState(false);
+    const [theme, setTheme] = useState(false);
 
     function handleTheme() {
         document.documentElement.classList.toggle("dark");

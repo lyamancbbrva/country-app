@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 
 function RandomCard({ data }) {
     function rnd(min, max) {
@@ -6,9 +6,7 @@ function RandomCard({ data }) {
     }
 
     if (!data || data.length === 0) {
-        return (
-            <div className='w-16 h-16 border-4 border-dashed rounded-full border-[#000] animate-spin dark:border-[#ccc] mx-auto my-[30px]'></div>
-        );
+        return <div></div>;
     }
 
     let rndInd = rnd(0, data.length - 1);
@@ -17,7 +15,7 @@ function RandomCard({ data }) {
     return (
         <div className='max-w-xs p-6 rounded-md shadow-md dark:bg-[#271b42] mx-auto my-[40px] md:flex items-center justify-between md:max-w-[100%] lg:mt-[30px] wrapper lg:h-[60vh]'>
             <img
-                src={country.flags.png}
+                src={country.flags.svg}
                 alt={`flag of ${country.name.common}`}
                 className='object-cover w-full md:w-[60%] h-[100%] rounded-md  dark:bg-gray-500'
             />
